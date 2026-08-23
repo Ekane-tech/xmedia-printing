@@ -1735,6 +1735,27 @@ button {
   box-shadow: 0 18px 34px rgba(1, 44, 26, 0.3);
 }
 
+.facebook {
+  position: fixed;
+  z-index: 90;
+  right: 25px;
+  bottom: 90px;
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: #1877f2;
+  border-radius: 50%;
+  box-shadow: 0 12px 28px rgba(24, 119, 242, 0.25);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.facebook:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 18px 34px rgba(24, 119, 242, 0.3);
+}
+
 .footer {
   padding: 80px 0 22px;
   color: white;
@@ -2463,6 +2484,7 @@ button {
   .form-success { min-height: 460px; }
 
   .whatsapp { right: 16px; bottom: 16px; width: 49px; height: 49px; }
+  .facebook { right: 16px; bottom: 75px; width: 49px; height: 49px; }
   .footer { padding-top: 65px; }
   .footer-main { grid-template-columns: 1fr; gap: 40px; padding-bottom: 45px; }
   .footer-brand img { width: 220px; }

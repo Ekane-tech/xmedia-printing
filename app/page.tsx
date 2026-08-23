@@ -14,6 +14,7 @@ import { Studio } from "@/components/sections/Studio";
 import { Process } from "@/components/sections/Process";
 import { Contact } from "@/components/sections/Contact";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { FacebookButton } from "@/components/FacebookButton";
 
 const advertImages = [
   "/images/promo.png",
@@ -130,6 +131,7 @@ export default function Home() {
       </section>
 
       <WhatsAppButton />
+      <FacebookButton />
     </main>
   );
 }
