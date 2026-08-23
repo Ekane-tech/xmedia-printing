@@ -12,7 +12,7 @@ export const translations = {
     heroKicker: "Print, technology & visual impact",
     heroTitleA: "MAKE YOUR",
     heroTitleB: "BRAND",
-    heroTitleC: "UNMISSABLE.",
+    heroTitleC: "REMARQUABLE",
     heroBody:
       "From one bold idea to a complete visual rollout, we print the pieces that put your business in front of the right people.",
     explore: "Explore our work",
@@ -83,6 +83,7 @@ export const translations = {
     footerExplore: "Explore",
     footerContact: "Contact",
     rights: "Xmedia Print & Technologies. All rights reserved.",
+    advertKicker: "Our latest work",
   },
   fr: {
     promo: "Vérification gratuite de vos fichiers pour toute commande confirmée",
@@ -94,7 +95,7 @@ export const translations = {
     heroKicker: "Impression, technologie & impact visuel",
     heroTitleA: "RENDEZ VOTRE",
     heroTitleB: "MARQUE",
-    heroTitleC: "REMARQUABLE.",
+    heroTitleC: "REMARQUABLE",
     heroBody:
       "D'une idée audacieuse à une campagne complète, nous imprimons les supports qui placent votre entreprise sous les bons regards.",
     explore: "Découvrir nos réalisations",
@@ -165,5 +166,6 @@ export const translations = {
     footerExplore: "Explorer",
     footerContact: "Contact",
     rights: "Xmedia Print & Technologies. Tous droits réservés.",
+    advertKicker: "Nos dernières réalisations",
   },
 };
