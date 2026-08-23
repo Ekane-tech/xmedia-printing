@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { services } from "./data/services";
 import {
   AnimatePresence,
   motion,
@@ -14,6 +16,8 @@ import {
   ArrowUpRight,
   Check,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Clock3,
   Mail,
   MapPin,
@@ -25,17 +29,9 @@ import {
   Sparkles,
   X,
 } from "lucide-react";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
 type Language = "en" | "fr";
-type Bilingual = { en: string; fr: string };
-type Service = {
-  title: Bilingual;
-  description: Bilingual;
-  image: string;
-  className: string;
-  number: string;
-};
 
 const copy = {
   en: {
@@ -61,17 +57,15 @@ const copy = {
     statTwo: "Quality control",
     statThree: "Local support",
     statFour: "From file to finish",
-    servicesKicker: "What we print",
-    servicesTitle: "One print partner. Every way to be seen.",
+    servicesKicker: "Our products & services",
+    servicesTitle: "The same trusted products, presented more clearly.",
     servicesBody:
-      "Built for growing brands, busy teams and big moments. Choose your format—we take care of the detail.",
+      "Explore Xmedia’s original product range. Open any service to see details, production options and more examples.",
     serviceCta: "View service",
-    bannerKicker: "NEW CLIENT OFFER",
-    bannerTitle: "Start strong. Save 15% on your first print order.",
-    bannerBody:
-      "Bring your campaign, event or brand launch to life with expert file checks included.",
-    claimOffer: "Claim the offer",
-    terms: "Applies to qualifying first orders. Ask our team for details.",
+    advertKicker: "Xmedia in colour",
+    advertTitle: "Ideas made visible.",
+    advertBody: "Explore a selection of the products and finishes available from our Douala studio.",
+    advertCta: "Discover this service",
     whyKicker: "Why Xmedia",
     whyTitle: "Good print is more than ink on a page.",
     whyBody:
@@ -94,6 +88,7 @@ const copy = {
     formBody:
       "Send a few project details and our Douala team will help you choose the right format and finish.",
     callUs: "Call us",
+    officeLine: "Office line",
     emailUs: "Email us",
     hours: "Working hours",
     hoursValue: "Mon–Sat · 8:00–18:00",
@@ -143,17 +138,15 @@ const copy = {
     statTwo: "Contrôle qualité",
     statThree: "Accompagnement local",
     statFour: "Du fichier à la finition",
-    servicesKicker: "Nos impressions",
-    servicesTitle: "Un seul partenaire. Mille façons d’être vu.",
+    servicesKicker: "Nos produits & services",
+    servicesTitle: "Les mêmes produits de confiance, présentés plus clairement.",
     servicesBody:
-      "Pour les marques ambitieuses, les équipes actives et les grands moments. Choisissez le format, nous soignons chaque détail.",
+      "Découvrez la gamme originale de Xmedia. Ouvrez chaque service pour consulter les détails, options et exemples.",
     serviceCta: "Voir le service",
-    bannerKicker: "OFFRE NOUVEAU CLIENT",
-    bannerTitle: "Démarrez fort. -15 % sur votre première commande.",
-    bannerBody:
-      "Donnez vie à votre campagne, événement ou lancement avec la vérification des fichiers incluse.",
-    claimOffer: "Profiter de l’offre",
-    terms: "Valable sur les premières commandes éligibles. Contactez-nous pour les détails.",
+    advertKicker: "Xmedia en couleur",
+    advertTitle: "Des idées rendues visibles.",
+    advertBody: "Découvrez une sélection de produits et finitions disponibles dans notre atelier de Douala.",
+    advertCta: "Découvrir ce service",
     whyKicker: "Pourquoi Xmedia",
     whyTitle: "Une belle impression, c’est bien plus que de l’encre.",
     whyBody:
@@ -176,6 +169,7 @@ const copy = {
     formBody:
       "Envoyez quelques détails et notre équipe de Douala vous aidera à choisir le bon format et la bonne finition.",
     callUs: "Appelez-nous",
+    officeLine: "Ligne fixe",
     emailUs: "Écrivez-nous",
     hours: "Horaires",
     hoursValue: "Lun–Sam · 8h00–18h00",
@@ -204,79 +198,19 @@ const copy = {
   },
 };
 
-const services: Service[] = [
-  {
-    number: "01",
-    title: { en: "Large format & banners", fr: "Grand format & bannières" },
-    description: {
-      en: "Posters, event banners and high-impact outdoor visuals.",
-      fr: "Affiches, bâches événementielles et visuels extérieurs percutants.",
-    },
-    image: "/images/large-format-printing.jpg",
-    className: "service-card--wide",
-  },
-  {
-    number: "02",
-    title: { en: "Business cards", fr: "Cartes de visite" },
-    description: {
-      en: "A memorable first impression, made to feel as good as it looks.",
-      fr: "Une première impression mémorable, belle à voir et agréable au toucher.",
-    },
-    image: "/images/business-cards-original.jpg",
-    className: "service-card--standard",
-  },
-  {
-    number: "03",
-    title: { en: "Flyers", fr: "Flyers" },
-    description: {
-      en: "Crisp, colourful handouts for launches, promotions and events.",
-      fr: "Des supports nets et colorés pour lancements, promotions et événements.",
-    },
-    image: "/images/flyers-original.png",
-    className: "service-card--standard",
-  },
-  {
-    number: "04",
-    title: { en: "Brochures & leaflets", fr: "Brochures & dépliants" },
-    description: {
-      en: "Structured stories with beautiful folds and professional finishes.",
-      fr: "Des contenus structurés, de beaux plis et des finitions professionnelles.",
-    },
-    image: "/images/brochures-original.jpg",
-    className: "service-card--standard",
-  },
-  {
-    number: "05",
-    title: { en: "Custom apparel", fr: "Textile personnalisé" },
-    description: {
-      en: "Embroidery and garment printing for teams, brands and communities.",
-      fr: "Broderie et marquage textile pour équipes, marques et communautés.",
-    },
-    image: "/images/custom-apparel.jpg",
-    className: "service-card--wide",
-  },
-  {
-    number: "06",
-    title: { en: "Signs & visual spaces", fr: "Signalétique & espaces" },
-    description: {
-      en: "Branded interiors, display graphics and directional signage.",
-      fr: "Habillage d’espace, supports d’exposition et signalétique directionnelle.",
-    },
-    image: "/images/interior-signage.jpg",
-    className: "service-card--standard",
-  },
-];
-
 const fadeUp = {
   hidden: { opacity: 0, y: 36 },
   show: { opacity: 1, y: 0 },
 };
+
+const advertServices = services;
 
 export default function Home() {
   const [language, setLanguage] = useState<Language>("en");
   const [menuOpen, setMenuOpen] = useState(false);
   const [formState, setFormState] = useState<"idle" | "sending" | "sent">("idle");
   const [fileName, setFileName] = useState("");
+  const [activeAdvert, setActiveAdvert] = useState(0);
   const t = copy[language];
   const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
@@ -285,6 +219,14 @@ export default function Home() {
     damping: 28,
     restDelta: 0.001,
   });
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActiveAdvert((current) => (current + 1) % advertServices.length);
+    }, 4500);
+
+    return () => window.clearInterval(interval);
+  }, []);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -339,7 +281,7 @@ export default function Home() {
             <button
               className={language === "fr" ? "active" : ""}
               type="button"
-              onClick={() => setLanguage("fr")}
+              onClick={() => changeLanguage("fr")}
               aria-pressed={language === "fr"}
             >
               FR
@@ -486,7 +428,7 @@ export default function Home() {
           <div className="services-grid">
             {services.map((service, index) => (
               <motion.article
-                className={`service-card ${service.className}`}
+                className="service-card"
                 key={service.number}
                 initial={{ opacity: 0, y: 44 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -496,7 +438,7 @@ export default function Home() {
               >
                 <div className="service-image">
                   <Image
-                    src={service.image}
+                    src={service.images[0]}
                     alt={service.title[language]}
                     fill
                     sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 40vw"
@@ -505,10 +447,10 @@ export default function Home() {
                 </div>
                 <div className="service-content">
                   <h3>{service.title[language]}</h3>
-                  <p>{service.description[language]}</p>
-                  <a href="#contact" aria-label={`${t.serviceCta}: ${service.title[language]}`}>
+                  <p>{service.shortDescription[language]}</p>
+                  <Link href={`/services/${service.slug}`} aria-label={`${t.serviceCta}: ${service.title[language]}`}>
                     {t.serviceCta}<ArrowUpRight size={17} />
-                  </a>
+                  </Link>
                 </div>
               </motion.article>
             ))}
@@ -516,43 +458,88 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="offer-section page-width" aria-label="Special offer">
-        <motion.div
-          className="offer-banner"
-          initial={{ opacity: 0, scale: 0.97 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: 0.7 }}
-        >
-          <div className="offer-art" aria-hidden="true">
-            <motion.div
-              className="offer-art-image"
-              whileInView={reduceMotion ? undefined : { rotate: [-5, -2], y: [16, 0] }}
-              transition={{ duration: 0.8 }}
-            >
-              <Image src="/images/flyers-original.png" alt="" fill sizes="360px" />
-            </motion.div>
-            <span className="offer-dot dot-one" /><span className="offer-dot dot-two" />
-          </div>
-          <div className="offer-copy">
-            <span className="offer-kicker">{t.bannerKicker}</span>
-            <h2>{t.bannerTitle}</h2>
-            <p>{t.bannerBody}</p>
-            <a className="button button--white" href="#contact">
-              {t.claimOffer}<ArrowRight size={18} />
-            </a>
-            <small>{t.terms}</small>
-          </div>
-          <motion.span
-            className="offer-figure"
-            initial={reduceMotion ? false : { opacity: 0, scale: 0.7, rotate: -8 }}
-            whileInView={{ opacity: 1, scale: 1, rotate: -3 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.35, type: "spring", stiffness: 160 }}
+      <section className="advert-section section" aria-label={t.advertKicker}>
+        <div className="page-width">
+          <motion.div
+            className="advert-heading"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.4 }}
+            variants={{ show: { transition: { staggerChildren: 0.1 } } }}
           >
-            15<sup>%</sup>
-          </motion.span>
-        </motion.div>
+            <div>
+              <motion.div className="eyebrow" variants={fadeUp}><span />{t.advertKicker}</motion.div>
+              <motion.h2 variants={fadeUp}>{t.advertTitle}</motion.h2>
+            </div>
+            <motion.p variants={fadeUp}>{t.advertBody}</motion.p>
+          </motion.div>
+
+          <div className="advert-slider">
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.article
+                className="advert-slide"
+                key={advertServices[activeAdvert].slug}
+                initial={reduceMotion ? { opacity: 0 } : { opacity: 0, x: 70 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={reduceMotion ? { opacity: 0 } : { opacity: 0, x: -70 }}
+                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <div className="advert-image">
+                  <Image
+                    className="advert-image-backdrop"
+                    src={advertServices[activeAdvert].images[0]}
+                    alt=""
+                    fill
+                    sizes="(max-width: 800px) 100vw, 62vw"
+                  />
+                  <div className="advert-image-product">
+                    <Image
+                      src={advertServices[activeAdvert].images[0]}
+                      alt={advertServices[activeAdvert].title[language]}
+                      fill
+                      sizes="(max-width: 800px) 90vw, 54vw"
+                    />
+                  </div>
+                </div>
+                <div className="advert-copy">
+                  <span>{advertServices[activeAdvert].number} / 06</span>
+                  <h3>{advertServices[activeAdvert].title[language]}</h3>
+                  <p>{advertServices[activeAdvert].shortDescription[language]}</p>
+                  <Link href={`/services/${advertServices[activeAdvert].slug}`}>
+                    {t.advertCta}<ArrowRight size={18} />
+                  </Link>
+                </div>
+              </motion.article>
+            </AnimatePresence>
+
+            <div className="advert-controls">
+              <div className="advert-dots" aria-label="Select advert">
+                {advertServices.map((service, index) => (
+                  <button
+                    type="button"
+                    className={activeAdvert === index ? "active" : ""}
+                    onClick={() => setActiveAdvert(index)}
+                    aria-label={`${language === "en" ? "Show" : "Afficher"} ${service.title[language]}`}
+                    aria-pressed={activeAdvert === index}
+                    key={service.slug}
+                  />
+                ))}
+              </div>
+              <div className="advert-arrows">
+                <button
+                  type="button"
+                  onClick={() => setActiveAdvert((activeAdvert - 1 + advertServices.length) % advertServices.length)}
+                  aria-label={language === "en" ? "Previous advert" : "Annonce précédente"}
+                ><ChevronLeft /></button>
+                <button
+                  type="button"
+                  onClick={() => setActiveAdvert((activeAdvert + 1) % advertServices.length)}
+                  aria-label={language === "en" ? "Next advert" : "Annonce suivante"}
+                ><ChevronRight /></button>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="why section" id="why">
@@ -673,6 +660,10 @@ export default function Home() {
               <a href="tel:+237699893120">
                 <span><Phone size={19} /></span>
                 <div><small>{t.callUs}</small><strong>+237 699 893 120</strong></div>
+              </a>
+              <a href="tel:+237233242403">
+                <span><Phone size={19} /></span>
+                <div><small>{t.officeLine}</small><strong>+237 233 242 403</strong></div>
               </a>
               <a href="mailto:info@xmediaprinting.com">
                 <span><Mail size={19} /></span>
