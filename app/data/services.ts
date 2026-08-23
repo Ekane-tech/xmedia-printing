@@ -29,10 +29,10 @@ export const services: PrintService[] = [
       fr: ["Impression directe en couleur", "Adaptée aux objets rigides", "Petites et grandes séries", "Finition précise et durable"],
     },
     images: [
-      "/images/uv1.jpg",
-      "/images/4.jpg",
-      "/images/5.jpg",
-      "/images/17.jpg",
+      "/images/xmedia-gadgets.jpg",
+      "/images/15.jpg",
+      "/images/16.jpg",
+      "/images/sonara.jpg",
     ],
   },
   {
@@ -52,9 +52,10 @@ export const services: PrintService[] = [
       fr: ["Formats intérieurs et extérieurs", "Couleurs à fort impact", "Plusieurs dimensions disponibles", "Finitions prêtes pour vos campagnes"],
     },
     images: [
-      "/images/affiche.jpg",
-      "/images/affiche_img.png",
-      "/images/flyers_menu.png",
+      "/images/poster-xmedia.jpg",
+      "/images/poster3.jpg",
+      "/images/poster1.jpg",
+      "/images/poster4.jpg",
     ],
   },
   {
@@ -74,9 +75,9 @@ export const services: PrintService[] = [
       fr: ["Recto ou recto-verso", "Textes nets et couleurs riches", "Choix de papiers professionnels", "Conseils de finition inclus"],
     },
     images: [
-      "/images/card5.jpg",
-      "/images/flyers_menu.png",
-      "/images/depliant.jpg",
+      "/images/premium-card.jpg",
+      "/images/business-card1.jpg",
+      "/images/business-card2.jpg",
     ],
   },
   {
@@ -96,9 +97,8 @@ export const services: PrintService[] = [
       fr: ["Plusieurs formats de papier", "Recto ou recto-verso", "Impression couleur vive", "Petites ou grandes quantités"],
     },
     images: [
-      "/images/flyers_menu.png",
-      "/images/depliant.jpg",
-      "/images/card5.jpg",
+      "/images/flyer-design.jpg",
+      "/images/flyer-stacks.jpg",
     ],
   },
   {
@@ -118,9 +118,8 @@ export const services: PrintService[] = [
       fr: ["Plusieurs types de plis", "Hiérarchie d’information claire", "Impression en couleur", "Papier et finition professionnels"],
     },
     images: [
-      "/images/depliant.jpg",
-      "/images/flyers_menu.png",
-      "/images/card5.jpg",
+      "/images/leaflet-folded-collection.jpg",
+      "/images/leaflet-print-finishing.jpg",
     ],
   },
   {
@@ -140,9 +139,8 @@ export const services: PrintService[] = [
       fr: ["Logos et lettrages", "Du prototype à la grande série", "Vérification du fichier incluse", "Finition durable au fil"],
     },
     images: [
-      "/images/broderie_img.jpg",
-      "/images/9.jpg",
-      "/images/tshirt-promotion.jpg",
+      "/images/embroidery-machine-xmedia.jpg",
+      "/images/embroidery-product-set.jpg",
     ],
   },
 ];

@@ -3,7 +3,6 @@ export type Bilingual = { en: string; fr: string };
 
 export const translations = {
   en: {
-    promo: "Free artwork check on every confirmed order",
     navServices: "Services",
     navWork: "Why Xmedia",
     navAbout: "About",
@@ -86,7 +85,6 @@ export const translations = {
     advertKicker: "Our latest work",
   },
   fr: {
-    promo: "Vérification gratuite de vos fichiers pour toute commande confirmée",
     navServices: "Services",
     navWork: "Pourquoi Xmedia",
     navAbout: "À propos",

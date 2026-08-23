@@ -781,6 +781,33 @@ button {
   object-fit: contain;
 }
 
+.promo-badge {
+  position: absolute;
+  z-index: 10;
+  top: 24px;
+  right: 24px;
+  padding: 10px 24px;
+  color: white;
+  background: #dc2626;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 0 8px 24px rgba(220, 38, 38, 0.4);
+  animation: pulse-badge 2s ease-in-out infinite;
+}
+
+@keyframes pulse-badge {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 8px 24px rgba(220, 38, 38, 0.4);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 12px 32px rgba(220, 38, 38, 0.6);
+  }
+}
+
 .advert-copy {
   position: relative;
   display: flex;
@@ -2429,8 +2456,8 @@ button {
   .contact-grid { gap: 50px; }
   .contact-list { margin-top: 30px; }
   .form-wrap { min-height: 0; padding: 28px 20px; }
-  .form-grid { grid-template-columns: 1fr; gap: 21px; }
-  .field--full { grid-column: 1; }
+  .form-grid { grid-template-columns: repeat(2, 1fr); gap: 16px 12px; }
+  .field--full { grid-column: 1 / -1; }
   .field input, .field select { height: 52px; }
   .form-submit { margin-top: 26px; }
   .form-success { min-height: 460px; }

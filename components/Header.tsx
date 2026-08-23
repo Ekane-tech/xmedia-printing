@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Menu, Sparkles, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useState } from "react";
 import type { Language } from "@/lib/translations";
 import { translations } from "@/lib/translations";
@@ -24,10 +24,6 @@ export function Header({ language, setLanguage }: HeaderProps) {
 
   return (
     <>
-      <div className="announcement">
-        <Sparkles size={14} aria-hidden="true" />
-        <span>{t.promo}</span>
-      </div>
       <header className="site-header">
       <a className="brand" href="#top" aria-label="Xmedia home" onClick={closeMenu}>
         <Image

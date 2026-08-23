@@ -7,23 +7,20 @@ import { useEffect, useState } from "react";
 import type { Language } from "@/lib/translations";
 import { translations } from "@/lib/translations";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Stats } from "@/components/sections/Stats";
 import { Services } from "@/components/sections/Services";
-import { TshirtPromotion } from "@/components/sections/TshirtPromotion";
-import { Why } from "@/components/sections/Why";
 import { Studio } from "@/components/sections/Studio";
 import { Process } from "@/components/sections/Process";
 import { Contact } from "@/components/sections/Contact";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 const advertImages = [
-  "/images/4.jpg",
-  "/images/5.jpg",
-  "/images/9.jpg",
-  "/images/17.jpg",
-  "/images/affiche_img.png",
+  "/images/promo.png",
+  "/images/modern-embroidered-apparel.jpg",
+  "/images/modern-keyrings.jpg",
+  "/images/modern-personalized-pens.jpg",
+  "/images/modern-usb-drives.jpg",
 ];
 
 export default function Home() {
@@ -59,10 +56,10 @@ export default function Home() {
       <Hero language={language} />
       <Stats language={language} />
       <Services language={language} />
-      <TshirtPromotion language={language} />
-      <Why language={language} />
       <Studio language={language} />
       <Process language={language} />
+
+      <Contact language={language} />
 
       <section className="advert-section section" aria-label={t.advertKicker}>
         <div className="page-width">
@@ -77,6 +74,11 @@ export default function Home() {
                 exit={reduceMotion ? { opacity: 0 } : { opacity: 0, x: -70 }}
                 transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               >
+                {advertImages[activeAdvert] === "/images/promo.png" && (
+                  <div className="promo-badge">
+                    {language === "en" ? "PROMO" : "PROMO"}
+                  </div>
+                )}
                 <div className="advert-image">
                   <Image
                     className="advert-image-backdrop"
@@ -127,8 +129,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Contact language={language} />
-      <Footer language={language} />
       <WhatsAppButton />
     </main>
   );
