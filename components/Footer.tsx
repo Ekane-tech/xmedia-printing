@@ -25,9 +25,8 @@ export function Footer({ language }: FooterProps) {
         </div>
         <div className="footer-nav">
           <span>{t.footerContact}</span>
-          <a href="tel:+237699893120">+237 699 893 120</a>
-          <a href="tel:+237233242403">+237 233 242 403</a>
-          <a href="mailto:info@xmediaprinting.com">info@xmediaprinting.com</a>
+          <a href="tel:+237682435366">+237 682 435 366</a>
+          <a href="mailto:commercial@xmediaprinting.com">commercial@xmediaprinting.com</a>
         </div>
       </div>
       <div className="page-width footer-bottom">

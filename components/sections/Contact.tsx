@@ -24,8 +24,30 @@ export function Contact({ language }: ContactProps) {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setFormState("sending");
-    window.setTimeout(() => setFormState("sent"), 850);
+    
+    const formData = new FormData(event.currentTarget);
+    const name = formData.get("name") as string;
+    const company = formData.get("company") as string;
+    const phone = formData.get("phone") as string;
+    const email = formData.get("email") as string;
+    const service = formData.get("service") as string;
+    const quantity = formData.get("quantity") as string;
+    const date = formData.get("date") as string;
+    const details = formData.get("details") as string;
+    
+    const subject = encodeURIComponent(`Print Quote Request from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\n` +
+      `Company: ${company || "N/A"}\n` +
+      `Phone: ${phone}\n` +
+      `Email: ${email}\n` +
+      `Service: ${service}\n` +
+      `Quantity: ${quantity || "N/A"}\n` +
+      `Delivery Date: ${date || "N/A"}\n\n` +
+      `Project Details:\n${details}`
+    );
+    
+    window.location.href = `mailto:commercial@xmediaprinting.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -42,13 +64,13 @@ export function Contact({ language }: ContactProps) {
           <motion.h2 variants={fadeUp}>{t.formTitle}</motion.h2>
           <motion.p variants={fadeUp}>{t.formBody}</motion.p>
           <motion.div className="contact-list" variants={fadeUp}>
-            <a href="tel:+237699893120">
+            <a href="tel:+237682435366">
               <span><Phone size={19} /></span>
-              <div><small>{t.callUs}</small><strong>+237 699 893 120</strong></div>
+              <div><small>{t.callUs}</small><strong>+237 682 435 366</strong></div>
             </a>
-            <a href="mailto:info@xmediaprinting.com">
+            <a href="mailto:commercial@xmediaprinting.com">
               <span><Mail size={19} /></span>
-              <div><small>{t.emailUs}</small><strong>info@xmediaprinting.com</strong></div>
+              <div><small>{t.emailUs}</small><strong>commercial@xmediaprinting.com</strong></div>
             </a>
             <div>
               <span><Clock3 size={19} /></span>

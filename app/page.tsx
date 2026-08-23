@@ -49,7 +49,7 @@ const advertImages = [
   "/images/5.jpg",
   "/images/9.jpg",
   "/images/17.jpg",
-  "/images/affiche_img.jpg",
+  "/images/affiche_img.png",
 ];
 
 export default function Home() {
@@ -90,11 +90,6 @@ export default function Home() {
   return (
     <main className="site-shell">
       <motion.div className="scroll-progress" style={{ scaleX }} />
-
-      <div className="announcement">
-        <Sparkles size={14} aria-hidden="true" />
-        <span>{t.promo}</span>
-      </div>
 
       <Header language={language} setLanguage={changeLanguage} />
       <Hero language={language} />
