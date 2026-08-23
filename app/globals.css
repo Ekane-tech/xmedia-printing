@@ -746,7 +746,7 @@ button {
 .advert-slide {
   min-height: 570px;
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(320px, 0.75fr);
+  grid-template-columns: 1fr;
 }
 
 .advert-image {
@@ -900,6 +900,215 @@ button {
 
 .advert-arrows button:hover {
   background: var(--pink);
+}
+
+.tshirt-promotion {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  background: #071a37;
+}
+
+.tshirt-promotion::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 31%;
+  content: "";
+  background: var(--pink);
+  opacity: 0.95;
+}
+
+.tshirt-promotion::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 22%;
+  height: 8px;
+  content: "";
+  background: var(--yellow);
+}
+
+.tshirt-promotion-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(350px, 0.72fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: clamp(65px, 9vw, 130px);
+}
+
+.tshirt-promotion-poster {
+  position: relative;
+  width: min(100%, 520px);
+  aspect-ratio: 2 / 3;
+  justify-self: center;
+  overflow: hidden;
+  background: #071425;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.36);
+}
+
+.tshirt-promotion-poster img {
+  object-fit: cover;
+}
+
+.tshirt-promotion-copy {
+  max-width: 640px;
+}
+
+.tshirt-promotion-brands {
+  margin-bottom: 22px;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+}
+
+.tshirt-promotion-brands i {
+  margin: 0 11px;
+  color: var(--yellow);
+  font-style: normal;
+}
+
+.tshirt-promotion-copy h2 {
+  margin: 0;
+  font-size: clamp(50px, 6vw, 86px);
+  font-weight: 950;
+  letter-spacing: -0.075em;
+  line-height: 0.92;
+}
+
+.tshirt-promotion-copy > p {
+  max-width: 590px;
+  margin: 27px 0 30px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.tshirt-promotion-copy ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px 26px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tshirt-promotion-copy li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.tshirt-promotion-copy li > span {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  color: var(--ink);
+  background: var(--yellow);
+  border-radius: 50%;
+}
+
+.tshirt-promotion-location {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin: 31px 0 23px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.tshirt-promotion-location > svg {
+  color: var(--pink);
+}
+
+.tshirt-promotion-location small,
+.tshirt-promotion-location strong {
+  display: block;
+}
+
+.tshirt-promotion-location small {
+  margin-bottom: 3px;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.tshirt-promotion-location strong {
+  font-size: 14px;
+}
+
+.tshirt-promotion-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.tshirt-promotion-actions > a {
+  min-height: 66px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 13px 15px;
+  color: white;
+  background: #13a667;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.tshirt-promotion-actions > a:last-child {
+  background: var(--blue);
+}
+
+.tshirt-promotion-actions > a:hover {
+  background: var(--pink);
+  transform: translateY(-3px);
+}
+
+.tshirt-promotion-actions small,
+.tshirt-promotion-actions strong {
+  display: block;
+}
+
+.tshirt-promotion-actions small {
+  margin-bottom: 4px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.tshirt-promotion-actions strong {
+  font-size: 15px;
+}
+
+.tshirt-promotion-facebook {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 24px;
+  padding-bottom: 7px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid currentColor;
+}
+
+.tshirt-promotion-facebook svg {
+  transition: transform 180ms ease;
+}
+
+.tshirt-promotion-facebook:hover svg {
+  transform: translate(3px, -3px);
 }
 
 .why {
@@ -2122,9 +2331,13 @@ button {
 
   .advert-heading { grid-template-columns: 1fr; gap: 22px; }
   .advert-heading p { max-width: 620px; }
-  .advert-slide { grid-template-columns: 1.2fr 0.8fr; }
+  .advert-slide { grid-template-columns: 1fr; }
   .advert-copy { padding-inline: 34px; }
   .advert-controls { width: max(320px, 40%); }
+
+  .tshirt-promotion-grid { grid-template-columns: minmax(300px, 0.75fr) 1fr; gap: 48px; }
+  .tshirt-promotion-copy h2 { font-size: clamp(46px, 7vw, 70px); }
+  .tshirt-promotion-actions { grid-template-columns: 1fr; }
 
   .why-grid { grid-template-columns: 1fr; gap: 80px; }
   .why-visual { min-height: min(660px, 80vw); }
@@ -2187,6 +2400,13 @@ button {
   .advert-copy { min-height: 360px; padding: 48px 24px 105px; }
   .advert-controls { width: 100%; height: 68px; padding-left: 22px; }
   .advert-arrows button { width: 54px; }
+
+  .tshirt-promotion::before { width: 100%; height: 28%; }
+  .tshirt-promotion-grid { grid-template-columns: 1fr; gap: 54px; }
+  .tshirt-promotion-poster { width: min(100%, 460px); }
+  .tshirt-promotion-copy h2 { font-size: clamp(45px, 13vw, 62px); }
+  .tshirt-promotion-copy ul { grid-template-columns: 1fr; }
+  .tshirt-promotion-actions { grid-template-columns: 1fr; }
 
   .why-grid { gap: 60px; }
   .why-visual { min-height: 118vw; }

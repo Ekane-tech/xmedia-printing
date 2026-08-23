@@ -16,7 +16,7 @@ export const services: Service[] = [
       en: "Posters, event banners and high-impact outdoor visuals.",
       fr: "Affiches, bâches événementielles et visuels extérieurs percutants.",
     },
-    image: "/images/large-format-printing.jpg",
+    image: "/images/affiche.jpg",
     className: "service-card--wide",
   },
   {
@@ -26,7 +26,7 @@ export const services: Service[] = [
       en: "A memorable first impression, made to feel as good as it looks.",
       fr: "Une première impression mémorable, belle à voir et agréable au toucher.",
     },
-    image: "/images/business-cards-original.jpg",
+    image: "/images/card5.jpg",
     className: "service-card--standard",
   },
   {
@@ -36,7 +36,7 @@ export const services: Service[] = [
       en: "Crisp, colourful handouts for launches, promotions and events.",
       fr: "Des supports nets et colorés pour lancements, promotions et événements.",
     },
-    image: "/images/flyers-original.png",
+    image: "/images/flyers_menu.png",
     className: "service-card--standard",
   },
   {
@@ -46,7 +46,7 @@ export const services: Service[] = [
       en: "Structured stories with beautiful folds and professional finishes.",
       fr: "Des contenus structurés, de beaux plis et des finitions professionnelles.",
     },
-    image: "/images/brochures-original.jpg",
+    image: "/images/depliant.jpg",
     className: "service-card--standard",
   },
   {
@@ -56,7 +56,7 @@ export const services: Service[] = [
       en: "Embroidery and garment printing for teams, brands and communities.",
       fr: "Broderie et marquage textile pour équipes, marques et communautés.",
     },
-    image: "/images/custom-apparel.jpg",
+    image: "/images/broderie_img.jpg",
     className: "service-card--wide",
   },
   {
@@ -66,7 +66,7 @@ export const services: Service[] = [
       en: "Branded interiors, display graphics and directional signage.",
       fr: "Habillage d'espace, supports d'exposition et signalétique directionnelle.",
     },
-    image: "/images/interior-signage.jpg",
+    image: "/images/affiche_img.png",
     className: "service-card--standard",
   },
 ];

@@ -1,31 +1,9 @@
 "use client";
 
-import { motion, useScroll, useSpring } from "framer-motion";
-import { Sparkles } from "lucide-react";
-import { useState } from "react";
-import { AnimatePresence, useReducedMotion } from "framer-motion";
-import { FormEvent, useEffect } from "react";
+import { AnimatePresence, motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
-import {
-  ArrowDown,
-  ArrowRight,
-  ArrowUpRight,
-  Check,
-  ChevronDown,
-  ChevronLeft,
-  ChevronRight,
-  Clock3,
-  Mail,
-  MapPin,
-  Menu,
-  MessageCircle,
-  Paperclip,
-  Phone,
-  Printer,
-  X,
-} from "lucide-react";
-import { services } from "./data/services";
+import { useEffect, useState } from "react";
 import type { Language } from "@/lib/translations";
 import { translations } from "@/lib/translations";
 import { Header } from "@/components/Header";
@@ -33,16 +11,12 @@ import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Stats } from "@/components/sections/Stats";
 import { Services } from "@/components/sections/Services";
+import { TshirtPromotion } from "@/components/sections/TshirtPromotion";
 import { Why } from "@/components/sections/Why";
 import { Studio } from "@/components/sections/Studio";
 import { Process } from "@/components/sections/Process";
 import { Contact } from "@/components/sections/Contact";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 36 },
-  show: { opacity: 1, y: 0 },
-};
 
 const advertImages = [
   "/images/4.jpg",
@@ -54,9 +28,6 @@ const advertImages = [
 
 export default function Home() {
   const [language, setLanguage] = useState<Language>("en");
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [formState, setFormState] = useState<"idle" | "sending" | "sent">("idle");
-  const [fileName, setFileName] = useState("");
   const [activeAdvert, setActiveAdvert] = useState(0);
   const t = translations[language];
   const reduceMotion = useReducedMotion();
@@ -75,13 +46,6 @@ export default function Home() {
     return () => window.clearInterval(interval);
   }, []);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setFormState("sending");
-    window.setTimeout(() => setFormState("sent"), 850);
-  };
-
-  const closeMenu = () => setMenuOpen(false);
   const changeLanguage = (nextLanguage: Language) => {
     setLanguage(nextLanguage);
     document.documentElement.lang = nextLanguage;
@@ -95,13 +59,14 @@ export default function Home() {
       <Hero language={language} />
       <Stats language={language} />
       <Services language={language} />
+      <TshirtPromotion language={language} />
       <Why language={language} />
       <Studio language={language} />
       <Process language={language} />
-      <Contact language={language} />
 
       <section className="advert-section section" aria-label={t.advertKicker}>
         <div className="page-width">
+          <div className="eyebrow"><span />{t.advertKicker}</div>
           <div className="advert-slider">
             <AnimatePresence mode="wait" initial={false}>
               <motion.article
@@ -123,7 +88,7 @@ export default function Home() {
                   <div className="advert-image-product">
                     <Image
                       src={advertImages[activeAdvert]}
-                      alt=""
+                      alt={`${t.advertKicker} ${activeAdvert + 1}`}
                       fill
                       sizes="(max-width: 800px) 90vw, 54vw"
                     />
@@ -133,15 +98,15 @@ export default function Home() {
             </AnimatePresence>
 
             <div className="advert-controls">
-              <div className="advert-dots" aria-label="Select advert">
-                {advertImages.map((_, index) => (
+              <div className="advert-dots" aria-label={language === "en" ? "Select advert" : "Choisir une annonce"}>
+                {advertImages.map((image, index) => (
                   <button
                     type="button"
                     className={activeAdvert === index ? "active" : ""}
                     onClick={() => setActiveAdvert(index)}
                     aria-label={`${language === "en" ? "Show" : "Afficher"} image ${index + 1}`}
                     aria-pressed={activeAdvert === index}
-                    key={index}
+                    key={image}
                   />
                 ))}
               </div>
@@ -162,6 +127,8 @@ export default function Home() {
         </div>
       </section>
 
+      <Contact language={language} />
+      <Footer language={language} />
       <WhatsAppButton />
     </main>
   );

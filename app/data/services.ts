@@ -30,8 +30,9 @@ export const services: PrintService[] = [
     },
     images: [
       "/images/uv1.jpg",
-      "/images/interior-signage.jpg",
-      "/images/flyers-original.png",
+      "/images/4.jpg",
+      "/images/5.jpg",
+      "/images/17.jpg",
     ],
   },
   {
@@ -52,8 +53,8 @@ export const services: PrintService[] = [
     },
     images: [
       "/images/affiche.jpg",
-      "/images/brochures-original.jpg",
-      "/images/business-cards-original.jpg",
+      "/images/affiche_img.png",
+      "/images/flyers_menu.png",
     ],
   },
   {
@@ -73,9 +74,9 @@ export const services: PrintService[] = [
       fr: ["Recto ou recto-verso", "Textes nets et couleurs riches", "Choix de papiers professionnels", "Conseils de finition inclus"],
     },
     images: [
-      "/images/business-cards-original.jpg",
-      "/images/flyers-original.png",
-      "/images/brochures-original.jpg",
+      "/images/card5.jpg",
+      "/images/flyers_menu.png",
+      "/images/depliant.jpg",
     ],
   },
   {
@@ -95,9 +96,9 @@ export const services: PrintService[] = [
       fr: ["Plusieurs formats de papier", "Recto ou recto-verso", "Impression couleur vive", "Petites ou grandes quantités"],
     },
     images: [
-      "/images/flyers-original.png",
-      "/images/brochures-original.jpg",
-      "/images/business-cards-original.jpg",
+      "/images/flyers_menu.png",
+      "/images/depliant.jpg",
+      "/images/card5.jpg",
     ],
   },
   {
@@ -117,9 +118,9 @@ export const services: PrintService[] = [
       fr: ["Plusieurs types de plis", "Hiérarchie d’information claire", "Impression en couleur", "Papier et finition professionnels"],
     },
     images: [
-      "/images/brochures-original.jpg",
-      "/images/flyers-original.png",
-      "/images/business-cards-original.jpg",
+      "/images/depliant.jpg",
+      "/images/flyers_menu.png",
+      "/images/card5.jpg",
     ],
   },
   {
@@ -140,7 +141,8 @@ export const services: PrintService[] = [
     },
     images: [
       "/images/broderie_img.jpg",
-      "/images/embroidery-shop.webp",
+      "/images/9.jpg",
+      "/images/tshirt-promotion.svg",
     ],
   },
 ];

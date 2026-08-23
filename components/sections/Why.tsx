@@ -29,7 +29,7 @@ export function Why({ language }: WhyProps) {
           transition={{ duration: 0.7 }}
         >
           <Image
-            src="/images/embroidery-shop.webp"
+            src="/images/broderie_img.jpg"
             alt="Xmedia-style custom apparel and embroidery production"
             fill
             sizes="(max-width: 850px) 100vw, 50vw"

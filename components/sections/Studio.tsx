@@ -17,7 +17,7 @@ export function Studio({ language }: StudioProps) {
     <section className="studio" id="about">
       <div className="studio-image">
         <Image
-          src="/images/xmedia-location.jpg"
+          src="/images/siege.jpg"
           alt="Xmedia studio location at Optic Laser Building in Douala"
           fill
           sizes="100vw"
