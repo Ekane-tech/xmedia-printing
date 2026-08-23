@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Check, Clock3, Mail, Phone } from "lucide-react";
 import { FormEvent, useState } from "react";
-import { ArrowDown, ChevronDown, Paperclip } from "lucide-react";
+import { ChevronDown, Paperclip } from "lucide-react";
 import type { Language } from "@/lib/translations";
 import { translations } from "@/lib/translations";
 import { services } from "@/lib/data";

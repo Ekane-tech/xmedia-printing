@@ -14,7 +14,7 @@ export function Footer({ language }: FooterProps) {
     <footer className="footer">
       <div className="page-width footer-main">
         <div className="footer-brand">
-          <Image src="/images/xmedia-logo.png" alt="Xmedia" width={1120} height={344} />
+          <Image src="/images/logo.png" alt="Xmedia" width={1120} height={344} />
           <p>{t.footerLine}</p>
         </div>
         <div className="footer-nav">
@@ -26,6 +26,7 @@ export function Footer({ language }: FooterProps) {
         <div className="footer-nav">
           <span>{t.footerContact}</span>
           <a href="tel:+237682435366">+237 682 435 366</a>
+          <a href="tel:+237651843671">+237 651 843 671</a>
           <a href="mailto:commercial@xmediaprinting.com">commercial@xmediaprinting.com</a>
         </div>
       </div>

@@ -34,7 +34,7 @@ const detailCopy = {
     ctaKicker: "Have a project in mind?",
     ctaTitle: "Let’s turn it into something people can see.",
     quote: "Request a quote",
-    call: "Call +237 699 893 120",
+    call: "Call +237 682 435 366",
     rights: "Xmedia Print & Technologies. All rights reserved.",
   },
   fr: {
@@ -52,7 +52,7 @@ const detailCopy = {
     ctaKicker: "Vous avez un projet ?",
     ctaTitle: "Transformons-le en un support que tout le monde verra.",
     quote: "Demander un devis",
-    call: "Appeler le +237 699 893 120",
+    call: "Appeler le +237 682 435 366",
     rights: "Xmedia Print & Technologies. Tous droits réservés.",
   },
 };
@@ -89,15 +89,15 @@ export default function ServiceDetails({ service }: { service: PrintService }) {
       <div className="service-topline">
         <span>{service.title[language]}</span>
         <div>
-          <a href="tel:+237699893120">+237 699 893 120</a>
+          <a href="tel:+237682435366">+237 682 435 366</a>
           <i aria-hidden="true" />
-          <a href="tel:+237233242403">+237 233 242 403</a>
+          <a href="tel:+237651843671">+237 651 843 671</a>
         </div>
       </div>
 
       <header className="service-header page-width">
         <Link className="service-brand" href="/" aria-label="Xmedia home">
-          <Image src="/images/xmedia-logo.png" alt="Xmedia Print and Technologies" width={1120} height={344} priority />
+          <Image src="/images/logo.png" alt="Xmedia Print and Technologies" width={1120} height={344} priority />
         </Link>
         <nav>
           <Link href="/#services"><ArrowLeft size={17} />{t.back}</Link>
@@ -244,20 +244,20 @@ export default function ServiceDetails({ service }: { service: PrintService }) {
           </div>
           <div>
             <Link className="button button--pink" href="/#contact">{t.quote}<ArrowRight size={18} /></Link>
-            <a className="service-call" href="tel:+237699893120"><Phone size={17} />{t.call}</a>
+            <a className="service-call" href="tel:+237682435366"><Phone size={17} />{t.call}</a>
           </div>
         </div>
       </section>
 
-      <a className="whatsapp" href="https://wa.me/237699893120" target="_blank" rel="noreferrer" aria-label="Chat with Xmedia on WhatsApp">
+      <a className="whatsapp" href="https://wa.me/237682435366" target="_blank" rel="noreferrer" aria-label="Chat with Xmedia on WhatsApp">
         <MessageCircle size={22} />
       </a>
 
       <footer className="service-footer">
         <div className="page-width">
-          <Image src="/images/xmedia-logo.png" alt="Xmedia" width={1120} height={344} />
+          <Image src="/images/logo.png" alt="Xmedia" width={1120} height={344} />
           <span>© {new Date().getFullYear()} {t.rights}</span>
-          <a href="mailto:info@xmediaprinting.com"><Mail size={16} />info@xmediaprinting.com</a>
+          <a href="mailto:commercial@xmediaprinting.com"><Mail size={16} />commercial@xmediaprinting.com</a>
         </div>
       </footer>
     </main>

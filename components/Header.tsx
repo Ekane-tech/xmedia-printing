@@ -23,10 +23,15 @@ export function Header({ language, setLanguage }: HeaderProps) {
   };
 
   return (
-    <header className="site-header">
+    <>
+      <div className="announcement">
+        <Sparkles size={14} aria-hidden="true" />
+        <span>{t.promo}</span>
+      </div>
+      <header className="site-header">
       <a className="brand" href="#top" aria-label="Xmedia home" onClick={closeMenu}>
         <Image
-          src="/images/xmedia-logo.png"
+          src="/images/logo.png"
           alt="Xmedia Print and Technologies"
           width={1120}
           height={344}
@@ -94,6 +99,7 @@ export function Header({ language, setLanguage }: HeaderProps) {
           </motion.nav>
         )}
       </AnimatePresence>
-    </header>
+      </header>
+    </>
   );
 }
