@@ -164,6 +164,6 @@ export const translations = {
     footerExplore: "Explorer",
     footerContact: "Contact",
     rights: "Xmedia Print & Technologies. Tous droits réservés.",
-    advertKicker: "Nos dernières réalisations",
+    advertKicker: "Vos travaux entre de bonnes mains",
   },
 };
