@@ -948,7 +948,7 @@ button {
 }
 
 .tshirt-promotion-poster img {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .tshirt-promotion-copy {

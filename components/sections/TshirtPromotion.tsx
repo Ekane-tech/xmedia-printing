@@ -45,7 +45,7 @@ export function TshirtPromotion({ language }: { language: Language }) {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           <Image
-            src="/images/tshirt-promotion.svg"
+            src="/images/tshirt-promotion.jpg"
             alt={language === "en" ? "T-shirt promotion from 1,500 FCFA" : "Promotion T-shirts à partir de 1 500 FCFA"}
             fill
             sizes="(max-width: 820px) 100vw, 44vw"

@@ -142,7 +142,7 @@ export const services: PrintService[] = [
     images: [
       "/images/broderie_img.jpg",
       "/images/9.jpg",
-      "/images/tshirt-promotion.svg",
+      "/images/tshirt-promotion.jpg",
     ],
   },
 ];
