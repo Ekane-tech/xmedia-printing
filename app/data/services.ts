@@ -58,7 +58,6 @@ export const services: PrintService[] = [
       "/images/poster4.jpg",
     ],
   },
-  
   {
     slug: "business-cards",
     number: "03",
