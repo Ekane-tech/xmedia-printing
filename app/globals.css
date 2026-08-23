@@ -773,12 +773,16 @@ button {
 .advert-image-product {
   position: absolute;
   z-index: 2;
-  inset: 36px;
+  inset: 8px 8px 48px 8px;
   filter: drop-shadow(0 18px 24px rgba(5, 17, 35, 0.18));
 }
 
 .advert-image-product img {
   object-fit: contain;
+}
+
+.advert-image--promo .advert-image-product {
+  inset: 8px 8px 64px 8px;
 }
 
 .promo-badge {
@@ -2417,7 +2421,7 @@ button {
   .hero-content { min-height: 740px; padding-top: 105px; padding-bottom: 50px; }
   .hero-copy { width: 100%; margin-top: 56px; }
   .hero .eyebrow { max-width: 280px; line-height: 1.4; }
-  .hero h1 { font-size: clamp(47px, 15.2vw, 69px); letter-spacing: -0.07em; line-height: 0.87; }
+  .hero h1 { font-size: clamp(36px, 12vw, 56px); letter-spacing: -0.07em; line-height: 0.87; }
   .hero h1 .hero-word { margin: 8px 0; padding: 2px 8px 7px 5px; }
   .hero-copy > p { margin-top: 24px; font-size: 15px; line-height: 1.56; }
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 13px; margin-top: 28px; }
@@ -2444,7 +2448,8 @@ button {
   .advert-heading h2 { font-size: clamp(42px, 12vw, 56px); }
   .advert-slide { min-height: 0; grid-template-columns: 1fr; }
   .advert-image { min-height: 390px; }
-  .advert-image-product { inset: 22px; }
+  .advert-image-product { inset: 6px 6px 36px 6px; }
+  .advert-image--promo .advert-image-product { inset: 6px 6px 48px 6px; }
   .advert-copy { min-height: 360px; padding: 48px 24px 105px; }
   .advert-controls { width: 100%; height: 68px; padding-left: 22px; }
   .advert-arrows button { width: 54px; }

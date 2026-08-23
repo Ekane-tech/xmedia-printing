@@ -80,7 +80,7 @@ export default function Home() {
                     {language === "en" ? "PROMO" : "PROMO"}
                   </div>
                 )}
-                <div className="advert-image">
+                <div className={`advert-image ${advertImages[activeAdvert] === "/images/promo.png" ? "advert-image--promo" : ""}`}>
                   <Image
                     className="advert-image-backdrop"
                     src={advertImages[activeAdvert]}
