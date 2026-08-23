@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import type { Language } from "@/lib/translations";
 import { translations } from "@/lib/translations";
-import { services } from "@/lib/data";
+import { services } from "@/app/data/services";
 
 interface ServicesProps {
   language: Language;
@@ -40,7 +41,7 @@ export function Services({ language }: ServicesProps) {
         <div className="services-grid">
           {services.map((service, index) => (
             <motion.article
-              className={`service-card ${service.className}`}
+              className="service-card"
               key={service.number}
               initial={{ opacity: 0, y: 44 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +51,7 @@ export function Services({ language }: ServicesProps) {
             >
               <div className="service-image">
                 <Image
-                  src={service.image}
+                  src={service.images[0]}
                   alt={service.title[language]}
                   fill
                   sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 40vw"
@@ -59,10 +60,10 @@ export function Services({ language }: ServicesProps) {
               </div>
               <div className="service-content">
                 <h3>{service.title[language]}</h3>
-                <p>{service.description[language]}</p>
-                <a href="#contact" aria-label={`${t.serviceCta}: ${service.title[language]}`}>
+                <p>{service.shortDescription[language]}</p>
+                <Link href={`/services/${service.slug}`} aria-label={`${t.serviceCta}: ${service.title[language]}`}>
                   {t.serviceCta}<ArrowUpRight size={17} />
-                </a>
+                </Link>
               </div>
             </motion.article>
           ))}

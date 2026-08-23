@@ -29,7 +29,7 @@ export const services: PrintService[] = [
       fr: ["Impression directe en couleur", "Adaptée aux objets rigides", "Petites et grandes séries", "Finition précise et durable"],
     },
     images: [
-      "/images/business-cards-original.jpg",
+      "/images/uv1.jpg",
       "/images/interior-signage.jpg",
       "/images/flyers-original.png",
     ],
@@ -51,7 +51,7 @@ export const services: PrintService[] = [
       fr: ["Formats intérieurs et extérieurs", "Couleurs à fort impact", "Plusieurs dimensions disponibles", "Finitions prêtes pour vos campagnes"],
     },
     images: [
-      "/images/interior-signage.jpg",
+      "/images/affiche.jpg",
       "/images/brochures-original.jpg",
       "/images/business-cards-original.jpg",
     ],
@@ -139,7 +139,7 @@ export const services: PrintService[] = [
       fr: ["Logos et lettrages", "Du prototype à la grande série", "Vérification du fichier incluse", "Finition durable au fil"],
     },
     images: [
-      "/images/custom-apparel.jpg",
+      "/images/broderie_img.jpg",
       "/images/embroidery-shop.webp",
     ],
   },

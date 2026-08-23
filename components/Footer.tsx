@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import type { Language } from "@/lib/translations";
 import { translations } from "@/lib/translations";
 
@@ -24,11 +25,14 @@ export function Footer({ language }: FooterProps) {
         </div>
         <div className="footer-nav">
           <span>{t.footerContact}</span>
-          <a href="#contact">{t.navContact}</a>
+          <a href="tel:+237699893120">+237 699 893 120</a>
+          <a href="tel:+237233242403">+237 233 242 403</a>
+          <a href="mailto:info@xmediaprinting.com">info@xmediaprinting.com</a>
         </div>
       </div>
       <div className="page-width footer-bottom">
-        <p>{t.rights}</p>
+        <span>© {new Date().getFullYear()} {t.rights}</span>
+        <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram <ArrowUpRight size={15} /></a>
       </div>
     </footer>
   );
