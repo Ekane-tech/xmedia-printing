@@ -45,7 +45,7 @@ export const translations = {
     visit: "Visit our studio",
     address: "Optic Laser Building, Boulevard de la République, Douala",
     processKicker: "Simple by design",
-    processTitle: "From idea to ready, in three clear steps.",
+    processTitle: "From idea to reality, in three clear steps.",
     process1: "Tell us what you need",
     process1Body: "Share your size, quantity, deadline and artwork—or just your idea.",
     process2: "We refine the details",
@@ -82,7 +82,7 @@ export const translations = {
     footerExplore: "Explore",
     footerContact: "Contact",
     rights: "Xmedia Print & Technologies. All rights reserved.",
-    advertKicker: "Our latest work",
+    advertKicker: "Get your work done with us",
   },
   fr: {
     navServices: "Services",
