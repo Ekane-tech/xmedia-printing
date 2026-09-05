@@ -284,8 +284,7 @@ button {
 }
 
 .hero-image img {
-  object-fit: cover;
-  object-position: 55% center;
+  object-fit: contain;
 }
 
 .hero-wash {
@@ -2428,7 +2427,7 @@ button {
   .button { width: 100%; min-height: 54px; }
   .text-link { font-size: 12px; }
   .hero-wash { background: linear-gradient(90deg, rgba(7, 26, 55, 0.96), rgba(7, 26, 55, 0.72)); }
-  .hero-image img { object-position: 58% center; }
+  .hero-image img { object-fit: contain; }
 
   .stats-grid { width: 100%; }
   .stat { min-height: 100px; padding: 18px 16px; }
