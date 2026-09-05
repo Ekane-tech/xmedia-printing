@@ -82,6 +82,7 @@ export const translations = {
     footerExplore: "Explore",
     footerContact: "Contact",
     rights: "Xmedia Print & Technologies. All rights reserved.",
+    advertKicker: "Get your work done with us",
   },
   fr: {
     navServices: "Services",
